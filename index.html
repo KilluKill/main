@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Music -->
+    <button id="music-toggle" class="music-button" title="Музыка 🔊">🔊</button>
+    <audio id="bg-music" src="audio/audio1.mp3" loop autoplay muted></audio>
+    </button>
+
+    <!-- Фоновое видео -->
+    <video autoplay muted loop id="bg-video">
+        <source src="video/chelovekbenzopila.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay">
+        <header>
+            <h1>PORTFOLIO</h1>
+            <nav>
+                <a href="nav/about.html">About</a>
+                <a href="nav/contact.html">Contact</a>
+            </nav>
+        </header>
+        <main class="grid">
+            <div class="card">
+                <img src="images/photo1.jpg" alt="Artwork" />
+                <button class="dark-button">нажми меня 😊</button>
+                <div class="emoji">😎</div>
+            </div>
+
+            <div class="card">
+                <img src="images/photo2.jpg" alt="Creature" />
+            </div>
+
+            <div class="card video-card">
+                <video src="video/NIGGACHU.MP4" autoplay muted loop poster="preview.mp4"></video>
+                <p>POKEMON!!!</p>
+            </div>
+
+            <div class="card">
+                <img src="images/photo3.png" alt="Door" />
+            </div>
+            <div class="card">
+                <img src="images/photo1.jpg" alt="Character" />
+            </div>
+            <div class="card">
+                <img src="images/photo2.jpg" alt="Alternate pose" />
+            </div>
+        </main>
+
+        <footer>
+            <p>© Эдуард, 2025</p>
+        </footer>
+    </div>
+    <script src="js/buttonsmile.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const music = document.getElementById("bg-music");
+            const toggleBtn = document.getElementById("music-toggle");
+
+            // Попробовать автозапуск
+            music.muted = false;
+            music.volume = 0.3;
+            music.play().catch(() => {
+                // Автозапуск может быть заблокирован — пользователь должен нажать кнопку
+            });
+
+            toggleBtn.addEventListener("click", () => {
+                music.muted = !music.muted;
+                toggleBtn.textContent = music.muted ? "🔇" : "🔊";
+            });
+        });
+    </script>
+
+</body>
+
+</html>
