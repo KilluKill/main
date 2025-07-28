@@ -28,14 +28,13 @@
             }, 3000); // скрыть через 3 секунды
         });
     </script>
-
-    <div id="loader">
-        <div class="loader-text">Загрузка легенды...</div>
-    </div>
     <!-- Фоновое видео -->
     <video autoplay muted loop id="bg-video">
         <source src="../video/chelovekbenzopila.mp4" autoplay loop muted type="video/mp4" />
     </video>
+    
+    <!-- Canvas для частиц -->
+    <canvas id="particle-canvas"></canvas>
 
     <div class="overlay">
         <section class="intro-hero">
@@ -164,7 +163,7 @@
             });
         });
     </script>
-
+    <script src="../js/animchastici.js"></script>
 
 </body>
 
